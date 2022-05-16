@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Titanic Survial</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename='assets/css/main.css')}}" />
+		<link  rel="icon" href="{{url_for('static', filename='images/titicon.png')}}" />
+	</head>
+	<body class="is-preload" style="font-family: sans-serif; background-color: lightgreen;">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<div>
+						<center><h2 style="color: white;background-color: green;">TITANIC SURVIVAL PREDICTOR AI APP</h2></center>
+
+					
+				</div>
+					<hr>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								
+								<li class="current"><a href="#about">About</a></li>
+								<li class="current"><a href="#predict"><b>Predict</b></a></li>
+								<li class="current"><a href="#author">Creator</a></li>
+								
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section class="wrapper style1" id="banner">
+					<header>
+						
+					</header>
+				</section>
+
+					<!-- Gigantic Heading -->
+				<section class="wrapper style2" id="predict">
+					<div class="container">
+						<header class="major">
+							<h2 style="background-color: green; color: white;">Surviving the Titanic? Find out! </h2>
+
+							<p><b>Kindly fill the inputs accordingly with the passenger's boarding details. If you don't understand any parameter, check <a href = "#about">HERE .</b></a>
+							</p>
+							
+						</header>
+					</div>
+					<section id="main" class="container medium">
+					
+					<div style="background-color: lightgreen;" class="box">
+						<form style="position: relative; text-align: center;" method="POST" action="{{url_for('index')}}">
+							<div style="font-size: 15px;" class="row gtr-50 gtr-uniform">
+								
+													<div class="col-6 col-6-mobilep">
+								Passenger Id</br>
+									<input type="number" name="id" step="1" min="1" max="890" value="" placeholder="1 to 890" required/>
+								</div>
+								<div class="col-6 col-6-mobilep">
+								Age</br>
+									<input type="number" name="age" step="1" min="1" max="80" value="" placeholder="1 to 80" required/>
+								</div>
+								<div class="col-6 col-6-mobilep">
+								Passenger Fare (British pound)</br>
+									<input type="number" name="fare" step="any" min="0" max="512.0" value="" placeholder=" 0 to 512" required/>
+
+													</div>
+								<div class="arrow col-6 col-6-mobilep">
+									Gender</br>
+    <select name="sex" required>
+        <option value=""> Choose </option>
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+    </select>
+</div>
+								<div class="arrow col-6 col-6-mobilep">
+									Port of Embarkation</br>
+    <select name="port" required>
+        <option value=""> Choose </option>
+        <option value="0">Cherbourg</option>
+        <option value="1">Queenstown</option>
+        <option value="2">Southampton</option>
+
+    </select>
+</div>
+								<div class="arrow col-6 col-6-mobilep">
+									Passenger Class</br>
+    <select name="pclass" required>
+        <option value=""> Choose </option>
+        <option value="1">1st</option>
+        <option value="2">2nd</option>
+        <option value="3">3rd</option>
+
+    </select>
+</div>
+								
+								<div class="arrow col-6 col-6-mobilep">
+									Number of Siblings/Spouses Aboard</br>
+    <select name="sib" required>
+        <option value=""> Choose </option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+         <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6 </option>
+         <option value="7">7</option>
+        <option value="8">8</option>
+
+    </select>
+</div>
+<div class="arrow col-6 col-6-mobilep">
+									Number of Parents/Children Aboard</br>
+    <select name="parch" required>
+        <option value=""> Choose </option>
+        <option value="1">1st</option>
+        <option value="2">2nd</option>
+        <option value="3">3rd</option>
+         <option value="4">4th</option>
+        <option value="5">5th</option>
+        <option value="6">6th</option>
+         <option value="7">7th</option>
+        <option value="8">8th</option>
+        <option value="9">9th</option>
+
+    </select>
+</div>
+								
+								
+								
+								
+								
+								<div class="col-12">
+									<ul class="actions special">
+										<li><input type="submit" value="Predict" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				</section>
+
+			<!-- Highlights -->
+			<section class="wrapper style1">
+					<div class="container">
+							<section  id="about" class="col-4 col-12-narrower">
+								<div id="header">
+						<h1 style="background-color: green; color: white; padding-top: 0.6em; height:2.8em; font-size: 20px;">THE TITANIC APP</h1>
+					</div>
+								<p></p>
+						
+								<p></p>
+								<p> The sinking of the Titanic is one of the most infamous shipwrecks in history.
+
+On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding with an iceberg. Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting in the death of 1502 out of 2224 passengers and crew.
+
+While there was some element of luck involved in surviving, it seems some groups of people were more likely to survive than others.
+
+<p>This Full-Stack AI app was built based on a predictive Machine Learning Model that answers the question: “what sorts of people were more likely to survive?” using passenger data (ie name, age, gender, socio-economic class, etc). </p>
+								<p>The App is an AI application trained using Random Forest Classifie. The data-set trained was gotten from <a href="https://www.kaggle.com/competitions/titanic/data"><b> Kaggle datasets</b>. </a>The exploratory data analysis can be found in this <a href="https://github.com/Ajisco/Breast-Tumor-Predictions-using-SVM/blob/master/Breast%20Tumor%20Predictions%20using%20SVM.ipynb">notebook</a> and the codes can be found in this <a href="https://github.com/Ajisco/Breast-Tumor-Predictions-using-SVM">repository</a> </p>
+								
+						
+							<p><u>Note for user:</u>Select or Input correct information where necessary</p>
+							</section>
+						
+					</div>
+		</section>
+					<hr>
+			
+				
+
+<section class="wrapper style1" id="author">
+					<div id="header">
+						<h1 style="background-color: green; color: white; padding-top: 0.6em; height:2.8em; font-size: 20px;">About the Creator</h1>
+					</div>
+					<div class="container">
+								<div style="border-radius: 50px;border: 0;display: inline-block;position: relative; max-width: 40%; float: left;padding: 1.5em 1.5em 1em 0;top: 0.25em;" class="inner">
+									<a href="https://bit.ly/aji_portfolio" ><img style="border-radius: 70px;display: block;width: 100%; position: relative; max-height: 15em;" src="{{url_for('static', filename='images/me.png')}}" alt="" /></a></div>
+									<div class="content" style="padding: 2.5em 1.5em 0;top: 3.25em;" >
+										<h2 class="major">Hi! I'm Ajibade Abdulquddus A.</h2>
+										<p>A motivated Data Scientist , AI/ML Engineer and a Software Developer 🕵🏽‍♂️ with relevant years of experience and great interest in problem solving with Data Science, Machine Learning,  Software Development, Research and Innovation.
+											I have built and published different machine learning models that solve different problems ( Crime, Health, business, finance, etc.) You can check out my projects <a href="#projects">Here </a> or go to my <a href="https://bit.ly/aji_portfolio">portfolio website </a> or my <a href="https://github.com/Ajisco">GitHub</a> page.
+										You can also connect with me on any of my <a href="#Contact">social media handles</a> . 
+										</p>
+										<a href="https://bit.ly/aji_portfolio" class="button">My Portfolio</a>
+									
+								</div></div></section>
+							
+			<!-- Posts -->
+				<section class="wrapper style1" id="projects">
+					<div id="header">
+						<h1 style="background-color: green; color: white; padding-top: 0.6em; height:2.8em; font-size: 25px;">Some other Projects by me</h1>
+					</div>
+						<hr>
+					<div class="container">
+						<div class="row">
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="https://tumpred.herokuapp.com" class="image left"><img src="{{url_for('static', filename='images/breast.jpg')}}" alt="" /></a>
+
+
+
+									<div class="inner">
+										<h3><a href="https://tumpred.herokuapp.com">Breast Tumor Predictor AI App</a></h3>
+										<p>This App uses Artificial Intelligence to predict whether a breast tumor is Benign or Malignant </p>
+									</div>
+								</div>
+							</section>
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="https://github.com/Ajisco/Kyphosis-Prediction-Using-Random-Forest/blob/master/Kyphosis%20Prediction%20%20Using%20Random%20Forest.ipynb" class="image left"><img src="{{url_for('static', filename='images/pic01.jpeg')}}" alt="" /></a>
+									<div class="inner">
+										<h3><a href="https://github.com/Ajisco/Kyphosis-Prediction-Using-Random-Forest/blob/master/Kyphosis%20Prediction%20%20Using%20Random%20Forest.ipynb">Predicting surgery succcess for Kyphosis</a></h3>
+										<p>Kyphosis is a disorder of the vertebrae column and it is mostly corrected by surgery. This model helps to predict the success of the surgery to correct Kyphosis.</p>
+									</div>
+								</div>
+							</section>
+							</div>
+							<div class="row">
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="https://github.com/Ajisco/Universities-Clustering-using-Kmeans/blob/master/Universities%20Clustering%20using%20Kmeans.ipynb" class="image left"><img src="{{url_for('static', filename='images/pic02.png')}}" alt="" /></a>
+									<div class="inner">
+										<h3><a href="https://github.com/Ajisco/Universities-Clustering-using-Kmeans/blob/master/Universities%20Clustering%20using%20Kmeans.ipynb">Public or Private University?</a></h3>
+										<p>The major classifications of schools, universities and colleges is into private and public. This model helps to predict if a school is private or public.</p>
+									</div>
+								</div>
+							</section>
+						
+						
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="https://github.com/Ajisco/Loan-Predictions-using-Random-Forests/blob/master/Loan%20Predictions%20using%20Random%20Forests.ipynb" class="image left"><img src="{{url_for('static', filename='images/pic03.jpg')}}" alt="" /></a>
+									<div class="inner">
+										<h3><a href="https://github.com/Ajisco/Loan-Predictions-using-Random-Forests/blob/master/Loan%20Predictions%20using%20Random%20Forests.ipynb">Customer Loan repayment</a></h3>
+										<p>Many loaning companies love to know about the success of their business. The model helps loaning companies to predict whether or not a customer will pay back loan in full .</p>
+									</div>
+								</div>
+							</section>
+							</div>
+							<div class="row">
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="https://tumpred.herokuapp.com" class="image left"><img src="{{url_for('static', filename='images/breast.jpg')}}" alt="" /></a>
+
+
+
+									<div class="inner">
+										<h3><a href="https://tumpred.herokuapp.com">Breast Tumor Predictor AI App</a></h3>
+										<p>This App uses Artificial Intelligence to predict whether a breast tumor is Benign or Malignant </p>
+									</div>
+								</div>
+							</section>
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="https://github.com/Ajisco/SVM-on-Iris-Flower-Data/blob/master/SVM%20on%20Iris%20Flower%20Data.ipynb" class="image left"><img src="{{url_for('static', filename='images/pic04.jpg')}}" alt="" /></a>
+									<div class="inner">
+										<h3><a href="https://github.com/Ajisco/SVM-on-Iris-Flower-Data/blob/master/SVM%20on%20Iris%20Flower%20Data.ipynb">Iris Flower Type</a></h3>
+										<p>The Iris Flower dataset is a very popular one for machine learning models. This model helps to predict the type of Iris flower.</p>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			<!-- CTA -->
+				<section id="cta" class="wrapper style3">
+					<div class="container">
+						<header>
+							<h2>Do you want to see more?</h2>
+							<a href="https://github.com/Ajisco" class="button">Click Here!</a>
+						</header>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<div style="background-color: lightgreen;" id="footer">
+					<div class="container">
+						<div class="row">
+							<section class="col-3 col-6-narrower col-12-mobilep">
+								<h3>Exploratory Data Analysis</h3>
+								<ul style="color: grey; font-size: 13px;" class="links">
+									<li><a href="https://github.com/Ajisco/911-Calls-Project/blob/master/911%20Calls%20Data%20Capstone%20Project%20.ipynb">911 calls EDA</a></li>
+									<li><a href="https://github.com/Ajisco/Finance-Data-Project/blob/master/Finance%20Project%20.ipynb">Company's finance EDA </a></li>
+									<li><a href="https://github.com/Ajisco/SVM-on-Iris-Flower-Data/blob/master/SVM%20on%20Iris%20Flower%20Data.ipynb">Iris Flower EDA</a></li>
+									<li><a href="https://github.com/Ajisco/Breast-Tumor-Predictions-using-SVM/blob/master/Breast%20Tumor%20Predictions%20using%20SVM.ipynb">Breast Tumour EDA</a></li>
+									<li><a href="https://github.com/Ajisco/Logistic-Regression-on-Advert-Success/blob/master/Logistic%20Regression%20on%20Advert%20Success.ipynb">Ads Click EDA</a></li>
+								</ul>
+							</section>
+							<section class="col-3 col-6-narrower col-12-mobilep">
+								<h3>More Deployed ML Models</h3>
+								<ul style="color: grey; font-size: 13px;" class="links">
+									<li><a href=https://tumpred.herokuapp.com">Breast Tumor Predictor AI App</a></li>
+									<li><a href="https://github.com/Ajisco/Universities-Clustering-using-Kmeans/blob/master/Universities%20Clustering%20using%20Kmeans.ipynb">Public or Private University?</a></li>
+									<li><a href="https://github.com/Ajisco/Loan-Predictions-using-Random-Forests/blob/master/Loan%20Predictions%20using%20Random%20Forests.ipynb">Customer Loan repayment</a></li>
+									
+									<li><a href="https://github.com/Ajisco/Movie-Recommendation-using-ML/blob/master/Movie%20Recommendation%20using%20ML.ipynb">Movie Recommendation</a></li>
+									<li><a href="https://github.com/Ajisco/NLP-of-Company-Reviews/blob/master/NLP%20of%20Yelp%20reviews.ipynb">NLP of Company Reviews</a></li>
+									
+								</ul>
+							</section>
+							
+						</div>
+					</div>
+
+					<!-- Icons -->
+						<ul class="icons" id="Contact" >
+							<li><a href="https://twitter.com/Dayo_Ajisco" class="icon brands fa-twitter" style="color: black;"><span class="label">Twitter</span></a></li>
+							
+							<li><a href="https://github.com/Ajisco" class="icon brands fa-github" style="color: black;"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/ajibade-abdulquddus-ab5237159" class="icon brands fa-linkedin-in" style="color: black;"><span class="label">LinkedIn</span></a></li>
+							<li><a href="ajiscomorac@gmail.com" class="icon brands fa-google-plus-g" style="color: black;"><span class="label">Google+</span></a></li>
+							<li><a href="https://www.instagram.com/dayo_ajisco" class="icon brands fa-instagram" style="color: black;"><span class="label">Instagram</span></a></li>
+							<li><a href="https://wa.me/+2349030987312" class="icon brands fa-whatsapp" style="color: black;"><span class="label">Whatsapp</span></a></li>
+						</ul>
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy;  <a href="http://ajisco.netlify.app">Ajisco.</a> All rights reserved</li>
+							</ul>
+						</div>
+
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.dropotron.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+		</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Result</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename='assets/css/main.css')}}" />
+		<link  rel="icon" href="{{url_for('static', filename='images/titicon.png')}}" />
+	</head>
+	<body style="font-family: sans-serif;" class="is-preload">
+
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div>
+						<center><h2 style="color: white;background-color: green;">TITANIC SURVIVAL RESULT</h2></center>
+
+					
+				</div>
+
+				
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-8 col-12-narrower">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											{%if data == 0%}
+											<header>
+												<h2>This Passenger would <span style="color: white; background-color: red;"> DIE</span> and wouldn't survive the TITANIC.</h2>
+												<p>This Passenger probably died in the  <b>Titanic incident</b>.</p>
+											</header>
+											
+
+
+											<span class="image featured"><img style="max-height: 25em; max-width: 25em;" src="{{url_for('static', filename='images/die.png')}}" alt="" /></span>
+											{%else%}
+											<header>
+												<h2>This Passenger would <span style="color: white; background-color: green;"> SURVIVE</span> the TITANIC.</h2>
+												<p>This Passenger probably Survived in the  <b>Titanic incident</b>.</p>
+											</header>
+											<span class="image featured"><img style="max-height: 25em; max-width: 25em;" src="{{url_for('static', filename='images/happy.png')}}" alt="" /></span>
+
+                                            {%endif%}
+
+											<p>The sinking of the Titanic is one of the most infamous shipwrecks in history. On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding with an iceberg.</p>
+
+											<h3>Disclaimer:</h3>
+											<p>The result above is the prediction from artificial intelligence inform of machine learning and it is not completely accurate.</p>
+
+						
+										</article>
+
+								</div>
+							</div>
+							<div class="col-4 col-12-narrower">
+								<div id="sidebar">
+
+									<!-- Sidebar -->
+
+										<section>
+											<h3>About The Titanic</h3>
+											<p>Titanic, in full Royal Mail Ship (RMS) Titanic, British luxury passenger liner that sank on April 14–15, 1912, during its maiden voyage, en route to New York City from Southampton, England, killing about 1,500 (see Researcher’s Note: Titanic) passengers and ship personnel...</p>
+											<footer>
+												<a style="font-size: 22px" href="https://www.britannica.com/topic/Titanic" class="link">Continue Reading</a>
+											</footer>
+										</section>
+
+										<section>
+											<h3>More interesting articles on The Titanic</h3>
+											<ul class="links">
+												<li><a href="https://www.history.com/topics/early-20th-century-us/titanic">The Titanic: Sinking & Facts - HISTORY</a></li>
+												<li><a href="https://www.insider.com/titanic-secrets-facts-2018-4">Titanic Secrets and Little-Known Facts - Insider</a></li>
+												<li><a href="https://www.nationalgeographic.org/education/titanic/">Remembering the Titanic </a></li>
+												
+											</ul>
+											<footer>
+												<a href="/" class="button">Go back to Home</a>
+											</footer>
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+			
+				
+			<!-- Footer -->
+				
+				<div id="footer">
+					
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a href="https://twitter.com/Dayo_Ajisco" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							
+							<li><a href="https://github.com/Ajisco" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/ajibade-abdulquddus-ab5237159" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="ajiscomorac@gmail.com" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+							<li><a href="https://www.instagram.com/dayo_ajisco" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://wa.me/+2349030987312" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy;  <a href="http://ajisco.netlify.app">Ajisco.</a> All rights reserved</li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/jquery.dropotron.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+	</body>
+</html>
